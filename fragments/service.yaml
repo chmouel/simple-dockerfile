@@ -4,7 +4,7 @@ metadata:
   name: simple-test
 spec:
   selector:
-    name: simple-test-service
+    deploymentconfig: simple-test
   ports:
     - name: simple-test-service-8000
       protocol: TCP
