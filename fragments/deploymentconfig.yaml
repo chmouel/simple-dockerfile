@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: simple-test
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: simple-test
+  strategy:
+    type: Recreate
+  triggers:
+    - type: ConfigChange
+
+  template:
+    metadata:
+      labels:
+        deploymentconfig: simple-test
+        name: simple-test
+    spec:
+      containers:
+        - image: simple-test
+          imagePullPolicy: Always
+          name: simple-test
+          ports:
+            - containerPort: 8000
+              name: simple-test-tcp-8000
+              protocol: TCP
+          terminationMessagePath: /dev/termination-log
+      restartPolicy: Always

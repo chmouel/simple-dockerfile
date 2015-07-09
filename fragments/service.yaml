@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-test
+spec:
+  selector:
+    name: simple-test-service
+  ports:
+    - name: simple-test-service-8000
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
