@@ -10,7 +10,14 @@ spec:
     type: Recreate
   triggers:
     - type: ConfigChange
-
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - simple-test
+        from:
+          kind: ImageStreamTag
+          name: simple-test:latest
+      type: ImageChange
   template:
     metadata:
       labels:
