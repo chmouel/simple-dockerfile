@@ -33,4 +33,5 @@ spec:
               name: simple-test-tcp-8000
               protocol: TCP
           terminationMessagePath: /dev/termination-log
+      dnsPolicy: ClusterFirst
       restartPolicy: Always

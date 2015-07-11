@@ -9,7 +9,7 @@ spec:
       name: simple-test:latest
   source:
     git:
-      ref: master
+      ref: with-mysql
       uri: https://github.com/chmouel/simple-dockerfile
     type: Git
   strategy:
