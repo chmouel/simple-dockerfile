@@ -15,12 +15,6 @@ spec:
   strategy:
     type: Docker
   triggers:
-    - generic:
-        secret: 7147201e200ea2da
-      type: Generic
-    - github:
-        secret: 9e7d74830de47006
-      type: GitHub
     - imageChange:
         lastTriggeredImageID: registry.access.redhat.com/openshift3/python-33-rhel7:latest
       type: ImageChange
