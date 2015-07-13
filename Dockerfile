@@ -8,4 +8,3 @@ RUN scl enable python33 'virtualenv /opt/openshift/src/venv && \
 USER 1001
 
 CMD scl enable python33 '/opt/openshift/src/venv/bin/python /opt/openshift/src/code/app.py'
-
