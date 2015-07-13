@@ -3,8 +3,7 @@ EXPOSE 8000
 RUN mkdir /opt/openshift/src/code
 COPY . /opt/openshift/src/code/
 RUN scl enable python33 'virtualenv /opt/openshift/src/venv && \
-    /opt/openshift/src/venv/bin/pip install -r /opt/openshift/src/code/requirements.txt' && \
-    chmod 666 /opt/openshift/src/code/app.py
+    /opt/openshift/src/venv/bin/pip install -r /opt/openshift/src/code/requirements.txt'
 
 USER 1001
 
