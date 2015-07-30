@@ -9,11 +9,17 @@ spec:
       name: simple-test:latest
   source:
     git:
-      ref: very-simple
+      ref: very-simple-s2i
       uri: https://github.com/chmouel/simple-dockerfile
     type: Git
   strategy:
-    type: Docker
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:latest
+        namespace: openshift
+      incremental: true
+    type: Source
   triggers:
     - imageChange:
         lastTriggeredImageID: registry.access.redhat.com/openshift3/python-33-rhel7:latest
